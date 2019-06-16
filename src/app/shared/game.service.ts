@@ -10,7 +10,7 @@ export class GameService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl: string = 'http://starnavi-frontend-test-task.herokuapp.com/';
+  baseUrl: string = 'https://starnavi-frontend-test-task.herokuapp.com/';
 
   getGameSettings() {
     return this.http.get(this.baseUrl + 'game-settings');
