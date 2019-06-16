@@ -27,7 +27,8 @@
 		<div *ngFor="let row of table; let i = index;" class="game-row">
 			<div *ngFor="let square of row; let j = index;" class="game-square"
 				[ngClass]="{'game-square-blue': square === 1, 'game-square-green': square === 2,
-				'game-square-red': square === 3, 'cursor-pointer': this.form.disabled}"
+				'game-square-red': square === 3, 'cursor-pointer': this.form.disabled,
+				'game-square-hard': table.length > 10}"
 				(click)="onSquareClick(i, j)">
 			</div>	
 		</div>
