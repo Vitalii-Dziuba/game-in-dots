@@ -1,0 +1,30 @@
+.leader {
+	padding: 120px 80px 50px;
+
+	&-title {
+		font-size: 26px;
+		padding-bottom: 40px;
+		color: #888;
+		font-weight: bold;
+	}
+
+	&-row {
+		display: flex;
+		width: 100%;
+		height: 60px;
+		font-size: 20px;
+		justify-content: space-between;
+		background-color: #cfd8dc;
+		color: #9fa8ab;
+		margin-bottom: 2px;
+		align-items: center;
+		padding: 0 20px;
+
+		span {
+		    max-width: 250px;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    overflow: hidden;
+		}
+	}
+}

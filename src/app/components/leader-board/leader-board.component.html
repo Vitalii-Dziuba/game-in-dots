@@ -1,0 +1,9 @@
+
+<div class="leader">
+	<div class="leader-title">Leader board</div>
+
+	<div class="leader-row" *ngFor="let leader of leaders | slice:0:5">
+		<span>{{leader.winner}}</span>
+		<span>{{leader.date}}</span>
+	</div>
+</div>

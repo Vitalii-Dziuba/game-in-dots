@@ -1,0 +1,35 @@
+
+<div class="game">
+	<form class="game-header" [formGroup]="form" (ngSubmit)="play()">
+		<mat-form-field class="game-setting"
+			[ngClass]="{'invalid': formSubmitted && form.controls.setting.invalid}">
+		  <mat-select placeholder="Pick game mode" formControlName="setting" (selectionChange)="onSelectSettings()">
+		    <mat-option *ngFor="let setting of settings" [value]="setting">
+		      {{setting.name}}
+		    </mat-option>
+		  </mat-select>
+		</mat-form-field>
+
+		<input class="game-user" name="name" placeholder="Enter your name" formControlName="name"
+			[ngClass]="{'invalid': formSubmitted && form.controls.name.invalid}">
+
+		<button class="game-button" [disabled]="this.form.disabled">{{finished ? 'PLAY AGAIN' : 'PLAY'}}</button>
+	</form>
+	<div class="game-title">
+		<span [hidden]="ticks > 3 || ticks < 1">{{ticks}}</span>
+		<span [hidden]="ticks!==0">GO!</span>
+		<span [hidden]="!finished || winner !== 1">Congratulations! {{form.value.name}} WON!</span>
+		<span [hidden]="!finished || winner !== 2">Computer WON. Good luck next time!</span>
+		<span [hidden]="!finished || winner !== 3">There is a draw. Good luck next time!</span>
+	</div>
+
+	<div class="game-field">
+		<div *ngFor="let row of table; let i = index;" class="game-row">
+			<div *ngFor="let square of row; let j = index;" class="game-square"
+				[ngClass]="{'game-square-blue': square === 1, 'game-square-green': square === 2,
+				'game-square-red': square === 3, 'cursor-pointer': this.form.disabled}"
+				(click)="onSquareClick(i, j)">
+			</div>	
+		</div>
+	</div>
+</div>

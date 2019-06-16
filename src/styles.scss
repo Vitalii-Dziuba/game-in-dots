@@ -1,1 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* {
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+
+app-root {
+	border: 1px solid transparent;
+}
+
+// material 
+.mat {
+	&-form-field {
+		&-wrapper {
+			border: 1px solid #cfd8dc;
+		}
+		&-appearance-legacy &-wrapper {
+			background-color: #cfd8dc;
+			padding-bottom: 0;
+			border-radius: 6px;
+		}
+		&-appearance-legacy &-underline {
+			display: none;
+		}
+		&-infix {
+			border-top: none;
+			height: 50px;
+		}
+		&-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float &-label {
+		 	display: none;
+		}
+		&-appearance-legacy &-label {
+		    top: 30px;
+			color: #7f9198;
+		    left: 15px;
+		}
+		&-disabled * {
+			cursor: not-allowed;
+		}
+	}
+	&-select {
+		&-trigger {
+			padding: 0 15px;
+			height: 45px;
+		}
+		&-value-text {
+		 	height: 45px;
+		 	display: flex;
+			color: #7f9198;
+		 	span {
+    			padding-top: 10px;
+		 	}
+		}
+		&-arrow {
+		    margin: 0 4px 7px!important;
+		}
+	}
+}
+
+.invalid {
+	&::placeholder {
+		color: #f44336;
+	}
+
+	.mat-form-field-wrapper {
+		border: 1px solid #f44336;
+	}
+}
+input.invalid {
+	border-color: #f44336!important;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+*:disabled {
+	opacity: 0.8!important;
+	cursor: not-allowed!important;
+}
