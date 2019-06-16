@@ -65,7 +65,7 @@ app-root {
 
 .invalid {
 	&::placeholder {
-		color: #f44336;
+		color: #f44336!important;
 	}
 
 	.mat-form-field-wrapper {
@@ -74,6 +74,7 @@ app-root {
 }
 input.invalid {
 	border-color: #f44336!important;
+
 }
 
 .cursor-pointer {
