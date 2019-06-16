@@ -131,7 +131,8 @@ export class GameComponent implements OnInit {
   }
 
   onSquareClick(i, j) {
-    if (this.currentSquare[0] === i && this.currentSquare[1] === j) {
+    if (this.currentSquare[0] === i && this.currentSquare[1] === j &&
+      this.table[this.currentSquare[0]][this.currentSquare[1]] === 1) {
       this.table[this.currentSquare[0]][this.currentSquare[1]] = 2;
       this.counter.green += 1;
     } else {
